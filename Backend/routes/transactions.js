@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
       P.Payment_ID,
       P.Method,
       P.Status
-    FROM TRANSACTION TR
+    FROM TRANSACTIONS TR
     JOIN TICKET TK ON TR.Ticket_ID = TK.Ticket_ID
     LEFT JOIN PAYMENT P ON P.Trans_ID = TR.Trans_ID
     ORDER BY TR.Trans_ID DESC

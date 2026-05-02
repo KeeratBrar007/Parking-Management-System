@@ -90,7 +90,7 @@ router.post('/exit', (req, res) => {
         db.query(freeSlot, [ticket.Slot_ID], (err) => {
           if (err) return res.status(500).json({ error: err.message });
 
-          const createTransaction = 'INSERT INTO TRANSACTION (Ticket_ID, Amount) VALUES (?, ?)';
+          const createTransaction = 'INSERT INTO TRANSACTIONS (Ticket_ID, Amount) VALUES (?, ?)';
           db.query(createTransaction, [ticket.Ticket_ID, amount], (err, transResult) => {
             if (err) return res.status(500).json({ error: err.message });
 
